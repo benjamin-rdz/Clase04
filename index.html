@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>💌 Clase 04</title>
+        <!-- Cargar la biblioteca p5.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+        <!-- Cargar la biblioteca ml5.js -->
+        <script src="https://unpkg.com/ml5@1/dist/ml5.js"></script>
+        <!-- Cargar el archivo CSS -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <p>
+                <a href="index.html" class="activo">Hola</a>
+                <a href="page-1.html">BodyPose</a>
+                <a href="page-2.html">BodySegmentation</a>
+                <a href="page-3.html">HandPose</a>
+                <a href="page-4.html">FaceMesh</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+        </header>
+        <main></main>
+        <script>
+            var texto = {
+                saludo: ["¡Hola mundo!", "¡Hola universo!", "¡Hola orbe!", "¡Hola cosmos!", "¡Hola a todos!"],
+                nombre: "Me llamo Benjamín Rodríguez",
+                motivo: "Tomé este curso y completo esta evaluación porque sigo interesado en aprender acerca de como se relaciona el mundo de la programación con el diseño, especialmente debido a que este cruce me otorga herramientas y ventajas competitivas como futuro diseñador, especialmente para introducirme al mundo del diseño UX",
+            };
+            var saludando, nombrando, motivando;
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                saludando = select("h1");
+                saludando.html(random(texto.saludo));
+                nombrando = select("h2");
+                nombrando.html(texto.nombre);
+                motivando = select("#aqui");
+                motivando.html(texto.motivo);
+            }
+            function draw() {
+                //repita este background en el style.css
+                background("#283593");
+                textSize(48);
+                text("💌", mouseX, mouseY);
+            }
+            function windowResized() {
+                //repita un mismo background en el style.css y en todos los script
+                background("#283593");
+                resizeCanvas(windowWidth, windowHeight);
+            }
+        </script>
+    </body>
+</html>
